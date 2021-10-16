@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 32px;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px #ccc;
+}
+
+.form__title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: normal;
+}
+
+.subtitle {
+    margin-bottom: 32px;
+    text-align: center;
+    color: #5F939A;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.form__group, input:not(:last-child) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form__input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #5F939A;
+}
+
+.btn__block {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.btn__block a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
+}
+
+.btn {
+    background-color: #269df4;
+    padding: 15px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+}
+
+.btn__login {
+    margin-bottom: 15px;
+}
