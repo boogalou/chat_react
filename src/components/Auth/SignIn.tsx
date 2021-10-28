@@ -1,11 +1,12 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Auth.module.css';
-import { ButtonJSX } from '../../elements/Button';
-import { Input } from '../../elements/Input';
+
+import { Button } from '../../elements/Button';
 import { FormBlock } from '../../elements/FormBlock';
-import { TitleH1 } from '../../elements/TitleH1';
+import { InputField } from '../../elements/Input';
+import styles from './Auth.module.css';
+import cn from 'classnames';
 
 
 export const SignIn: FC = () => {
@@ -29,43 +30,41 @@ export const SignIn: FC = () => {
 
   return (
     <FormBlock callback={ submitHandler } className={ styles.form }>
-      <TitleH1 className={ styles.form__title }> Войти </TitleH1>
-      <span className={ styles.subtitle }>Войти в аккаунт</span>
-      <div className={ styles.form__group }>
-        <Input
-          id={ 'email' }
-          type={ 'email' }
-          name={ 'email' }
-          placeholder={ 'Email' }
-          value={ emailValue }
-          callback={ emailOnChangeHandler }
-          className={ styles.form__input }
-        />
+      <h1 className={ styles.form__title }> Войти </h1>
+      <span className={ styles.form__subtitle }>Войти в аккаунт</span>
 
-        <Input
-          id={ 'password' }
-          type={ 'password' }
-          name={ 'password' }
-          placeholder={ 'Password' }
-          value={ passwordValue }
-          callback={ passwordOnChangeHandler }
-          className={ styles.form__input }
-        />
+      <InputField
+        id={ 'email' }
+        type={ 'email' }
+        name={ 'email' }
+        placeholder={ 'Email' }
+        value={ emailValue }
+        // callback={ emailOnChangeHandler }
+        className={ styles.form__input }
+      />
+
+      <InputField
+        id={ 'password' }
+        type={ 'password' }
+        name={ 'password' }
+        placeholder={ 'Password' }
+        value={ passwordValue }
+        // callback={ passwordOnChangeHandler }
+
+      />
 
 
-        <div className={ styles.btn__block }>
-          <ButtonJSX
+      <div className={ cn(styles['btn-group'], styles['form__btn-group']) }>
+        <Button
+          disabled={ false }>
+          Войти
+        </Button>
 
-            className={
-              [styles.btn, styles.btn__login].join(' ') }>
-            Войти
-          </ButtonJSX>
-
-          <Link to="/registration"
-          >Зарегистрироваться
-          </Link>
-        </div>
+        <Link className={ cn(styles['btn-group__btn--link']) } to="/registration"
+        >Зарегистрироваться
+        </Link>
       </div>
     </FormBlock>
-  );
+  )
+    ;
 };

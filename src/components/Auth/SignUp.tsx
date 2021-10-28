@@ -1,39 +1,65 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Button } from '../../elements/Button';
+import { InputField } from '../../elements/Input';
 import styles from './Auth.module.css';
+import cn from 'classnames';
 
 export const SignUp = () => {
 
+  function registrationClickHandler(evt: MouseEvent<HTMLButtonElement>): void {
+    evt.preventDefault();
+  }
+
   return (
     <>
-      <div className={styles.container}>
-        <form className={styles.form}>
-          <h1 className={styles.form__title}>Создать Аккаунт</h1>
-          <span className={styles.subtitle}>для общения в чате тербуется регистрация</span>
-          <div className={styles.form__group}>
+      <div className={ styles.container }>
+        <form className={ styles.form }>
+          <h1 className={ styles.form__title }>Создать аккаунт</h1>
+          <span className={ styles.form__subtitle }>для общения в чате тербуется регистрация</span>
 
-            <label htmlFor="form__input" className={styles.label__input}></label>
-            <input type="text" placeholder="Name" className={styles.form__input}/>
+          <InputField
+            id="name"
+            type="text"
+            placeholder="Name"
+          />
 
-            <label htmlFor="form__input" className={styles.label__input}></label>
-            <input type="email" placeholder="Email" className={styles.form__input}/>
+          <InputField
+            type="text"
+            id="email"
+            placeholder="Email"
+          />
 
-            <label htmlFor="form__input" className={styles.label__input}></label>
-            <input type="password" placeholder="Password" className={styles.form__input}/>
+          <InputField
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
 
-            <label htmlFor="form__input" className={styles.label__input}></label>
-            <input type="password" placeholder="Confirm password" className={styles.form__input}/>
-          </div>
-          <div className={ styles.btn__block }>
-            <button className={ [styles.btn, styles.btn__login].join(' ') }>Зарегистрироваться</button>
+          <InputField
+            type="password"
+            id="password"
+            placeholder="Confirm password"
+          />
 
-            <Link to='/login'
-            >Войти в аккаунт
-            </Link>
+
+          <div className={cn (styles['btn-group'], styles['form__btn-group'])}>`
+            <Button
+              callback={ registrationClickHandler }
+            >Зарегистрироваться
+            </Button>
+
+            <Link
+              to="/login"
+              className={ cn(styles['btn-group__btn--link'])}
+              >Войти в аккаунт
+            </Link >
           </div>
         </form>
       </div>
     </>
-  );
+  )
+    ;
 };
 
