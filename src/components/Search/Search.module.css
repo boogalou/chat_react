@@ -1,0 +1,11 @@
+.search {
+    grid-area: search;
+    padding: 10px;
+    background-color: #f1f6fb;
+}
+
+.search-input {
+    width: 93%;
+    padding: 15px;
+    border-radius: 6px;
+}

@@ -12,6 +12,7 @@ form {
     padding: 32px;
     border-radius: 6px;
     box-shadow: 0 4px 16px #ccc;
+    transition: 0.5s;
 }
 
 .form__title {
@@ -28,8 +29,6 @@ form {
     font-weight: 300;
     font-size: 14px;
 }
-
-
 
 .btn-group {
     display: flex;

@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Button } from '../../elements/Button';
@@ -8,7 +8,15 @@ import cn from 'classnames';
 
 export const SignUp = () => {
 
-  function registrationClickHandler(evt: MouseEvent<HTMLButtonElement>): void {
+  const [inputValue, setInputValue] = useState<string>('')
+
+  function changeHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+      setInputValue(evt.target.value)
+  }
+
+  console.log(inputValue);
+
+  function registrationClickHandler(evt:React.MouseEvent<HTMLButtonElement>): void {
     evt.preventDefault();
   }
 
@@ -23,28 +31,33 @@ export const SignUp = () => {
             id="name"
             type="text"
             placeholder="Name"
+            callback={changeHandler}
+
           />
 
           <InputField
-            type="text"
             id="email"
+            type="text"
             placeholder="Email"
+            callback={changeHandler}
           />
 
           <InputField
-            type="password"
             id="password"
+            type="password"
             placeholder="Password"
+            callback={changeHandler}
           />
 
           <InputField
-            type="password"
             id="password"
+            type="password"
             placeholder="Confirm password"
+            callback={changeHandler}
           />
 
 
-          <div className={cn (styles['btn-group'], styles['form__btn-group'])}>`
+          <div className={cn (styles['btn-group'], styles['form__btn-group'])}>
             <Button
               callback={ registrationClickHandler }
             >Зарегистрироваться

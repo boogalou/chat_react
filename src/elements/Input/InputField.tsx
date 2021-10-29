@@ -1,27 +1,56 @@
-import React, { FC, InputHTMLAttributes, ReactElement, ReactNode } from 'react';
+import React, { FC, InputHTMLAttributes, ReactElement, ReactNode, useState } from 'react';
 import styles from './InputField.module.css';
 
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  type?: string;
+  label?: ReactElement;
+  id?: string;
+  value?: string;
+  placeholder?: string;
+  callback?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
   children?: ReactNode;
-  label: ReactElement
 
 }
 
+export const InputField: FC<InputProps> = ({
+                                             type,
+                                             label,
+                                             id,
+                                             value,
+                                             placeholder,
+                                             callback,
+                                             className,
+                                             ...attr
+                                           }: InputProps) => {
 
-export const InputField: FC<InputProps> = ({label, className, id, value, onChange, ...InputAttrs}: InputProps) => {
-
-  console.log({...InputAttrs});
+  //ToDo adding validation
 
   return (
     <div className={ styles.form__group }>
       { label && <label htmlFor={ id }>{ label }</label> }
-      <input
-        className={ styles.form__input }
-        type="text"
-        id={ id }
-        { ...InputAttrs }
-      />
+
+      { type === 'textarea' ? (
+        <input
+          type="text"
+          id={ id }
+          placeholder={ placeholder }
+          onChange={ callback }
+          className={ styles.form__input }
+          {...attr}
+        />
+      ) : (
+        <input
+          type="text"
+          id={ id }
+          placeholder={ placeholder }
+          value={ value }
+          onChange={ callback }
+          className={ styles.form__input }
+          {...attr}
+        />
+      ) }
+
     </div>
   );
 };

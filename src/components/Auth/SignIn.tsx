@@ -1,27 +1,20 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-
-import { Button } from '../../elements/Button';
-import { FormBlock } from '../../elements/FormBlock';
-import { InputField } from '../../elements/Input';
-import styles from './Auth.module.css';
 import cn from 'classnames';
+
+
+import styles from './Auth.module.css';
+import { Button } from '../../elements/Button';
+import { InputField } from '../../elements/Input';
 
 
 export const SignIn: FC = () => {
 
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
+  const [inputValue, setInputlValue] = useState('');
 
-  const emailOnChangeHandler = (evt: React.ChangeEvent<HTMLInputElement>): void => {
-    setEmailValue(evt.target.value);
-    console.log(emailValue);
-  };
 
-  const passwordOnChangeHandler = (evt: React.ChangeEvent<HTMLInputElement>): void => {
-    setPasswordValue(evt.target.value);
-    console.log(evt.target.value);
+  const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>): void => {
+    setInputlValue(evt.target.value);
   };
 
   const submitHandler = (evt: React.FormEvent<HTMLFormElement>): void => {
@@ -29,7 +22,7 @@ export const SignIn: FC = () => {
   };
 
   return (
-    <FormBlock callback={ submitHandler } className={ styles.form }>
+    <form className={ styles.form }>
       <h1 className={ styles.form__title }> Войти </h1>
       <span className={ styles.form__subtitle }>Войти в аккаунт</span>
 
@@ -38,9 +31,7 @@ export const SignIn: FC = () => {
         type={ 'email' }
         name={ 'email' }
         placeholder={ 'Email' }
-        value={ emailValue }
-        // callback={ emailOnChangeHandler }
-        className={ styles.form__input }
+        callback={ changeHandler }
       />
 
       <InputField
@@ -48,9 +39,7 @@ export const SignIn: FC = () => {
         type={ 'password' }
         name={ 'password' }
         placeholder={ 'Password' }
-        value={ passwordValue }
-        // callback={ passwordOnChangeHandler }
-
+        callback={ changeHandler }
       />
 
 
@@ -64,7 +53,7 @@ export const SignIn: FC = () => {
         >Зарегистрироваться
         </Link>
       </div>
-    </FormBlock>
+    </form>
   )
     ;
 };

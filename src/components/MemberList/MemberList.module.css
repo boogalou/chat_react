@@ -1,0 +1,22 @@
+.contacts {
+    grid-area: contacts;
+    background-color: #f1f6fb;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.contacts::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+
+.search-input {
+    width: 93%;
+    padding: 15px;
+    border-radius: 6px;
+}

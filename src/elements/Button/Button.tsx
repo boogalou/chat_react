@@ -13,8 +13,8 @@ type ButtonProps = {
 export const Button: FC<ButtonProps> = ({ children, className, callback, disabled }: ButtonProps): JSX.Element => {
 
 
-  const classes = cn(styles['btn-group__btn'], disabled)
-  console.log(classes);
+  const classes = cn(styles['btn-group__btn'], disabled);
+
   return (
     <>
       <button
