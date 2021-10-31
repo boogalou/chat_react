@@ -8,17 +8,17 @@
 }
 
 .contact-item__name {
-    margin-right: 160px;
-}
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
 
-.contact-avatar {
-    position: relative;
-    margin-right: 25px;
 }
 
 .time {
     margin-bottom: 20px;
-    font-size: 14px;
+    margin-left: auto;
+    padding-right: 8px;
+    font-size: 12px;
     color: #707070;
 }
 
@@ -33,28 +33,13 @@
     color: #707070;
 }
 
-.image-rounded {
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    width: 60px;
-    height: 60px;
-    background-size: cover;
-    background-position: top cover;
-}
 
-.online-status {
+.online-status{
     position: absolute;
     top: 65%;
     left: 82%;
     width: 10px;
     height: 10px;
-    background-color: #3ab908;
     border-radius: 50%;
     border: 2px solid #fff
-}
-
-.search-input {
-    width: 93%;
-    padding: 15px;
-    border-radius: 6px;
 }

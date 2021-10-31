@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Route } from 'react-router-dom';
-import { SignIn, SignUp } from './components/Auth';
-import { App } from './App/App';
 
-export const Routes = () => {
+import { SignIn, SignUp } from './components/Auth';
+import { App } from './App';
+
+
+export const Routes: FC = () => {
   return (
     <>
       <Route path={ ['/', '/login'] } exact>
@@ -15,7 +17,7 @@ export const Routes = () => {
       </Route>
 
       <Route path={ '/im' } exact>
-        <App children={ 'Hekko' }/>
+        <App />
       </Route>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { FC, InputHTMLAttributes, ReactElement, ReactNode, useState } from 'react';
 import styles from './InputField.module.css';
+import cn from 'classnames';
 
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -26,8 +27,10 @@ export const InputField: FC<InputProps> = ({
 
   //ToDo adding validation
 
+  const classes = cn(className)
+
   return (
-    <div className={ styles.form__group }>
+    <>
       { label && <label htmlFor={ id }>{ label }</label> }
 
       { type === 'textarea' ? (
@@ -36,7 +39,7 @@ export const InputField: FC<InputProps> = ({
           id={ id }
           placeholder={ placeholder }
           onChange={ callback }
-          className={ styles.form__input }
+          className={ classes }
           {...attr}
         />
       ) : (
@@ -46,11 +49,11 @@ export const InputField: FC<InputProps> = ({
           placeholder={ placeholder }
           value={ value }
           onChange={ callback }
-          className={ styles.form__input }
+          className={ classes }
           {...attr}
         />
       ) }
 
-    </div>
+    </>
   );
 };

@@ -1,0 +1,12 @@
+.bubble {
+    max-width: 500px;
+    padding: 10px;
+    background: #FBFBFB;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px 0px rgba(9, 9, 9, 0.2);
+}
+
+.bubble:hover {
+    background-color: #f7f3f3;
+}

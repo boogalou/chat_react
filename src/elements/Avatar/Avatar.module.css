@@ -1,0 +1,10 @@
+.avatar {
+position: relative;
+}
+
+.image-rounded {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}

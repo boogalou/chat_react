@@ -1,6 +1,16 @@
 :root{
-    --color-blue: #269df4;
-    --color-white: #FFF
+
+    /*light colors*/
+    --color-light-blue: #f1f6fb;
+    --color-white: #FFF;
+    --color-dark-blue: #3B8DF5;
+
+    /*  dark theme  */
+
+    --color-main-bg: #293145;
+    --color-items: #293145;
+    --color-top-bar: #293144;
+
 }
 
 body {
@@ -9,6 +19,12 @@ body {
     box-sizing: content-box;
     font-family: 'Roboto', sans-serif;
 }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
 
 
 

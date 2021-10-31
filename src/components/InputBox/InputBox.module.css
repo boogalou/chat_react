@@ -1,3 +1,9 @@
+.input-box {
+    grid-area: input-box;
+    padding: 10px;
+    background-color: #F1F6FB;
+}
+
 .chat-input__container {
     display: flex;
     flex-direction: row;
@@ -15,14 +21,12 @@
 .chat-input__input {
     padding: 15px;
     width: 95%;
-
     border-radius: 6px;
+    outline-color: #fa9511;
+    border: solid 2px #269df4
 }
 
-.chat-input__input {
-    outline-color: #fa9511;
-    border: solid 2px #269df4;
-}
+
 
 .send-btn__block {
     display: flex;

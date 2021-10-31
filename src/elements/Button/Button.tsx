@@ -1,5 +1,4 @@
-import React, { FC, ReactNode, MouseEvent } from 'react';
-import styles from './Button.module.css'
+import React, { FC, MouseEvent, ReactNode } from 'react';
 import cn from 'classnames';
 
 type ButtonProps = {
@@ -13,8 +12,8 @@ type ButtonProps = {
 export const Button: FC<ButtonProps> = ({ children, className, callback, disabled }: ButtonProps): JSX.Element => {
 
 
-  const classes = cn(styles['btn-group__btn'], disabled);
-
+  const classes = cn(disabled, className);
+  console.log(className);
   return (
     <>
       <button
