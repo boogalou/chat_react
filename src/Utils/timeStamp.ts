@@ -1,4 +1,3 @@
-
 export type RangesType = {
   [key: string]: string | number;
 }
@@ -7,7 +6,7 @@ export type RangesType = {
 export const timeAgo = (input: Date | string) => {
   const date = (input instanceof Date) ? input : new Date(input);
   const formatter = new Intl.RelativeTimeFormat('ru');
-  const ranges: RangesType =  {
+  const ranges: RangesType = {
     years: 3600 * 24 * 365,
     months: 3600 * 24 * 30,
     weeks: 3600 * 24 * 7,
@@ -23,5 +22,5 @@ export const timeAgo = (input: Date | string) => {
       return formatter.format(Math.round(delta), key as Intl.RelativeTimeFormatUnit);
     }
   }
-}
+};
 
