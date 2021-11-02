@@ -21,7 +21,7 @@ export function CheckMarkMessage({isRead, className}: CheckMarkMessageProps) {
        height="18px"
        viewBox="0 0 594.149 594.149"
     // style="enable-background:new 0 0 594.149 594.149;"
-       fill={ isRead ? "#3883E3" : "#000" }
+       fill="#3883E3"
        xmlSpace="preserve"
   >
     <g>
