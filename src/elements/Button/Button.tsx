@@ -1,25 +1,27 @@
 import React, { FC, MouseEvent, ReactNode } from 'react';
+
+import styles from './Button.module.css'
 import cn from 'classnames';
 
 type ButtonProps = {
-  children: ReactNode;
-  className?: string;
+  children?: ReactNode;
+  classMix?: string;
   callback?: (evt: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }
 
 
-export const Button: FC<ButtonProps> = ({ children, className, callback, disabled }: ButtonProps): JSX.Element => {
+export const Button: FC<ButtonProps> = ({ children = 'Button', classMix, callback, disabled }: ButtonProps): JSX.Element => {
 
 
-  const classes = cn(disabled, className);
-  console.log(className);
+  const classes = cn(styles.button, classMix);
+  console.log(classes);
   return (
     <>
       <button
-        onClick={ callback }
         className={ classes }
-        disabled={disabled}
+        onClick={ callback }
+        disabled={ disabled }
       >
         { children }
       </button>

@@ -64,7 +64,7 @@ export const SignUp = () => {
 
          <div className={ cn(styles['btn-group'], styles['form__btn-group']) }>
            <Button
-             className={ styles['btn-group__btn'] }
+             classMix={ styles['btn-group__btn'] }
              callback={ registrationClickHandler }
            >Зарегистрироваться
            </Button>

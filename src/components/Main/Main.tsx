@@ -12,7 +12,7 @@ export function Main() {
         messageTime={ '2021-10-30T11:18:05.367Z' }
         userPic={ `https://www.wirewag.com/wp-content/uploads/2020/09/Jessica-Alba.jpg` }
         isMe={true}
-
+        isRead={false}
       />
 
     </section>

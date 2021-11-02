@@ -4,6 +4,8 @@ import styles from './MessageBox.module.css';
 import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { BubbleDialog } from '../../elements/BubbleDialog';
+import { CheckMarkMessage } from '../../elements/CheckMarkMessage';
+import cn from 'classnames';
 
 
 type MessageBoxProps = {
@@ -25,7 +27,9 @@ export function MessageBox({messageTime, msgText, userPic, isMe}: MessageBoxProp
           <BubbleDialog className={ styles['message-box__bubble'] }>
             { msgText }
           </BubbleDialog>
-          <TimeAgo className={ styles['message-box__time'] } messageTime={ messageTime }/>
+          <div style={ {padding: '0 10px'} }>
+            <TimeAgo className={ styles['message-box__time'] } messageTime={ messageTime }/>
+          </div>
         </div>
       </div>
 
@@ -33,11 +37,15 @@ export function MessageBox({messageTime, msgText, userPic, isMe}: MessageBoxProp
         <div className={ styles['message-box__avatar'] }>
           <Avatar userPic={ userPic }/>
         </div>
-        <div className={ isMe ? styles['container--me'] : styles.container}>
+        <div className={ isMe ? styles['container--me'] : styles.container }>
           <BubbleDialog className={ styles['message-box__bubble'] }>
             { msgText }
+
           </BubbleDialog>
-          <TimeAgo className={ styles['message-box__time'] } messageTime={ messageTime }/>
+          <div style={ {display: 'flex', justifyContent: 'space-between', padding: '0 10px'} }>
+            { isMe && <CheckMarkMessage isRead/> }
+            <TimeAgo className={ styles['message-box__time'] } messageTime={ messageTime }/>
+          </div>
         </div>
       </div>
     </>

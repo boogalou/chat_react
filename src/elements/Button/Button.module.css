@@ -1,0 +1,10 @@
+
+
+.button {
+    background-color: var(--color-deep-blue);
+    letter-spacing: 1px;
+    padding: 15px 24px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    color: #FFF;
+}

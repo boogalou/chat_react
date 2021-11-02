@@ -12,7 +12,7 @@ export function InputBox() {
 
         <div className={ styles['chat-input__container'] }>
           <div className={ styles['attach-btn__block'] }>
-            <Button className={ styles['btn-attach'] }>
+            <Button classMix={ styles['btn-attach'] }>
               <img src="./img/attachicon_.svg" alt="send_msg icon" width="25" />
             </Button>
           </div>
@@ -21,10 +21,10 @@ export function InputBox() {
             <InputField type="text" className={ styles['chat-input__input'] } />
           </form>
           <div className={ styles['send-btn__block'] }>
-            <Button className={ styles['btn-emoji'] }>
+            <Button classMix={ styles['btn-emoji'] }>
               <img src="./img/emoji_.svg" alt="send_msg icon" width="25" />
             </Button>
-            <Button className={ styles['btn-send'] }>
+            <Button classMix={ styles['btn-send'] }>
               <img src="./img/send_msg_.svg" alt="send_msg icon" width="25" height="25"/>
             </Button>
           </div>

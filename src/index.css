@@ -1,9 +1,8 @@
-:root{
-
+:root {
     /*light colors*/
     --color-light-blue: #f1f6fb;
     --color-white: #FFF;
-    --color-dark-blue: #3B8DF5;
+    --color-deep-blue: #3B8DF5;
 
     /*  dark theme  */
 
@@ -11,6 +10,7 @@
     --color-items: #293145;
     --color-top-bar: #293144;
 
+    /*  ---------  */
 }
 
 body {
