@@ -18,7 +18,9 @@ export function InputBox() {
           </div>
 
           <form action="" className={ styles['chat-input__form'] }>
-            <InputField type="text" className={ styles['chat-input__input'] } />
+            <InputField
+              type="text"
+              className={ styles['chat-input__input'] } />
           </form>
           <div className={ styles['send-btn__block'] }>
             <Button classMix={ styles['btn-emoji'] }>

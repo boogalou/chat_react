@@ -1,23 +1,22 @@
-import React, { FC, InputHTMLAttributes, ReactElement, ReactNode, useState } from 'react';
+import React, { ChangeEvent, FC, InputHTMLAttributes, ReactElement, ReactNode } from 'react';
 import styles from './InputField.module.css';
 import cn from 'classnames';
 
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   type?: string;
-  label?: ReactElement;
   id?: string;
+  label?: ReactElement;
   value?: string;
   placeholder?: string;
-  callback?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+  callback?: (e: ChangeEvent<HTMLInputElement & HTMLSelectElement>) => void;
   children?: ReactNode;
-
 }
 
 export const InputField: FC<InputProps> = ({
+                                             id,
                                              type,
                                              label,
-                                             id,
                                              value,
                                              placeholder,
                                              callback,
@@ -25,35 +24,35 @@ export const InputField: FC<InputProps> = ({
                                              ...attr
                                            }: InputProps) => {
 
-  //ToDo adding validation
 
-  const classes = cn(className)
-
+  const classes = cn(className);
   return (
     <>
-      { label && <label htmlFor={ id }>{ label }</label> }
+      <div className={ styles['form__group'] }>
+        { label && <label htmlFor={ id }/>}
 
-      { type === 'textarea' ? (
-        <input
-          type="text"
+        { type === 'textarea' ? (
+          <input
+            id={ id }
+            type={ type }
+            placeholder={ placeholder }
+            value={ value }
+            onChange={ callback }
+            className={ classes }
+            { ...attr }
+          />
+        ) : (
+          <input
           id={ id }
-          placeholder={ placeholder }
-          onChange={ callback }
-          className={ classes }
-          {...attr}
-        />
-      ) : (
-        <input
-          type="text"
-          id={ id }
+          type={ type }
           placeholder={ placeholder }
           value={ value }
           onChange={ callback }
           className={ classes }
-          {...attr}
-        />
-      ) }
-
+        { ...attr }
+          />
+          ) }
+      </div>
     </>
   );
 };

@@ -1,6 +1,4 @@
-export type RangesType = {
-  [key: string]: string | number;
-}
+export type RangesType = Record<string, number>
 
 
 export const timeAgo = (input: Date | string) => {

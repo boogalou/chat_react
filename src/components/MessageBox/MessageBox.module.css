@@ -51,4 +51,20 @@
 
 }
 
+.message-box__attachments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.attachments__file {
+    max-width: 100px;
+    height: auto;
+    border-radius: 6px;
+
+}
+
 
