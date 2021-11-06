@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from './OnlineStatus.module.css';
 import cn from 'classnames';
 
 type OnlineStatusProps = {
-  className: string;
+  className?: string;
+  onlineStatus?: boolean;
 }
 
-export function OnlineStatus({className}: OnlineStatusProps) {
+export function OnlineStatus({className, onlineStatus}: OnlineStatusProps) {
 
-  const [onlineStatus, setOnlineStatus] = useState(false);
 
-const classes = cn(styles[`online-status--offline`], className)
+  const classes = cn(
+    styles[`online-status`],
+    onlineStatus
+      ? styles[`online-status--online`]
+      : styles[`online-status--offline`])
 
   return (
     <>

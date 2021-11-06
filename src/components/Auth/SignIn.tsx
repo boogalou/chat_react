@@ -8,6 +8,7 @@ import { Button } from '../../elements/Button';
 import { InputField } from '../../elements/Input';
 import { useForm } from '../../hooks/useForm';
 import { UserInit } from './types';
+import { EMAIL } from './Regex';
 
 
 export const SignIn: FC = () => {
@@ -16,7 +17,7 @@ export const SignIn: FC = () => {
     validations: {
       email: {
         pattern: {
-          value: '/^[a-zA-Z0-9.!#$%&\'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/',
+          value: "^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
           message: 'You\'re not allowed to...',
         },
       },
@@ -43,7 +44,7 @@ export const SignIn: FC = () => {
         <h1 className={ styles.form__title }> Войти </h1>
         <span className={ styles.form__subtitle }>Войти в аккаунт</span>
 
-        { errors.name && <p className="error">{ errors.name }</p> }
+        { errors.email && <p className="error">{ errors.email }</p> }
         <InputField
           id="email"
           type="email"

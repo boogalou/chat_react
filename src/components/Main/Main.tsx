@@ -34,6 +34,7 @@ export function Main() {
         userPic={ `https://www.wirewag.com/wp-content/uploads/2020/09/Jessica-Alba.jpg` }
         isMe={ false }
         isRead={ false }
+        isTyping={ false }
       />
 
       <MessageBox
@@ -59,6 +60,45 @@ export function Main() {
         attachments={ attachments }
         isMe={ true }
         isRead={ false }
+      />
+
+      <MessageBox
+        msgText={ 'Сама идея работы генератора заимствована у псевдосоветского "универсального кода речей", из которого мы выдернули используемые в нём словосочетания, запилили приличное количество собственных, в несколько раз усложнили алгоритм, добавив новые схемы сборки, – и оформили в виде быстрого и удобного сервиса для получения тестового контента.' }
+        messageTime={ '2021-10-30T11:18:05.367Z' }
+        userPic={ `https://www.wirewag.com/wp-content/uploads/2020/09/Jessica-Alba.jpg` }
+        isMe={ false }
+        isRead={ false }
+        isTyping={ true }
+      />
+
+      <MessageBox
+        msgText={ null }
+        messageTime={ '2021-10-30T11:18:05.367Z' }
+        userPic={ `https://www.wirewag.com/wp-content/uploads/2020/09/Jessica-Alba.jpg` }
+        attachments={ [
+          {
+            filename: 'image.jpg',
+            url: 'https://i1.sndcdn.com/avatars-000184939717-kd5pr5-t500x500.jpg',
+          },
+        ] }
+        isMe={ false }
+        isRead={ false }
+        isTyping={ false }
+      />
+
+      <MessageBox
+        msgText={ null }
+        messageTime={ '2021-10-30T11:18:05.367Z' }
+        userPic={ `https://www.wirewag.com/wp-content/uploads/2020/09/Jessica-Alba.jpg` }
+        attachments={ [
+          {
+            filename: 'image.jpg',
+            url: 'https://images.all-free-download.com/images/graphiclarge/ford_fairlane_zb_500_516881.jpg',
+          },
+        ] }
+        isMe={ true }
+        isRead={ false }
+        isTyping={ false }
       />
 
     </section>

@@ -8,6 +8,7 @@ import { Button } from '../../elements/Button';
 import { InputField } from '../../elements/Input';
 import { useForm } from '../../hooks/useForm';
 import { UserInit } from './types';
+import { EMAIL, NAME, PASSWORD, } from './Regex';
 
 
 export const SignUp: FC = () => {
@@ -15,7 +16,7 @@ export const SignUp: FC = () => {
     validations: {
       name: {
         pattern: {
-          value: '^[A-Za-z]*$',
+          value: NAME,
           message: 'You\'re not allowed to...',
         },
         required: {
@@ -25,7 +26,7 @@ export const SignUp: FC = () => {
       },
       email: {
         pattern: {
-          value: '^[a-zA-Z0-9.!#$%&\'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$',
+          value: EMAIL,
           message: 'Не правильно введен адрес почты',
         },
         required: {
@@ -34,6 +35,10 @@ export const SignUp: FC = () => {
         }
       },
       password: {
+        pattern: {
+          value: PASSWORD,
+          message: 'Пароль должени быть не мение 8 символов',
+        },
         required: {
           value: true,
           message: 'This field is required',

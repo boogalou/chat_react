@@ -5,7 +5,7 @@ import styles from './Header.module.css'
 export function Header() {
   return (
     <div className={styles.header}>
-      <h4>coming soon</h4>
+      <h4>comming soon</h4>
     </div>
   );
 }

@@ -21,4 +21,3 @@ export const timeAgo = (input: Date | string) => {
     }
   }
 };
-

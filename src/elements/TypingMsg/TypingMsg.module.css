@@ -1,0 +1,7 @@
+.typing {
+    display: flex;
+    align-items: center;
+    max-width: 35px;
+    max-height: 15px;
+    padding-left: 30%;
+}
