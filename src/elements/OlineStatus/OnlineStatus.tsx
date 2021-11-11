@@ -5,15 +5,15 @@ import cn from 'classnames';
 
 type OnlineStatusProps = {
   className?: string;
-  onlineStatus?: boolean;
+  isOnline?: boolean;
 }
 
-export function OnlineStatus({className, onlineStatus}: OnlineStatusProps) {
+export function OnlineStatus({className, isOnline}: OnlineStatusProps) {
 
 
   const classes = cn(
     styles[`online-status`],
-    onlineStatus
+    isOnline
       ? styles[`online-status--online`]
       : styles[`online-status--offline`])
 

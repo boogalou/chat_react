@@ -4,19 +4,17 @@ import styles from './Member.module.css';
 import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { OnlineStatus } from '../../elements/OlineStatus';
+import { UserType } from '../MemberList/MemberList';
 
 
 type MemberProps = {
-  id: number;
-  name: string;
-  statusMsg: string;
-  onlineStatus: boolean;
-  userPic: string;
-  lastVisit: string;
+  text: string;
+  created_at: string;
+  user: UserType;
 }
 
 
-export function Member({name, onlineStatus, statusMsg, lastVisit, userPic}: MemberProps) {
+export function Member({text, created_at, user}: MemberProps) {
 
   return (
     <>
@@ -24,16 +22,18 @@ export function Member({name, onlineStatus, statusMsg, lastVisit, userPic}: Memb
 
         <Avatar
           className={ styles.avatar }
-          userPic={ userPic }
+          avatar={ user.avatar}
         >
-          <OnlineStatus className={ styles['online-status']} onlineStatus={onlineStatus}/>
+          <OnlineStatus className={ styles['online-status']} isOnline={user.isOnline}/>
         </Avatar>
         <div className={ styles['contact-item__name'] }>
-          <div className={ styles['contact-name'] }>{ name }</div>
-          <span className={ styles['contact-status'] }>{ statusMsg }</span>
+          <div className={ styles['contact-name'] }>{ user.fullName }</div>
+          <span className={ styles['contact-status'] }>{
+            text.length > 25 ? text.slice(0, 25) + '...' : text
+          }</span>
         </div>
 
-        <TimeAgo messageTime={ lastVisit } className={ styles['time'] }/>
+        <TimeAgo created_at={ created_at } className={ styles['time'] }/>
       </div>
     </>
   );

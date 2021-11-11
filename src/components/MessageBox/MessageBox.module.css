@@ -75,4 +75,11 @@
     width: 100%
 }
 
+.message-box__voice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+}
+
 

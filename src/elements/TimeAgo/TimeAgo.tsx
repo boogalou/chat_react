@@ -2,14 +2,14 @@ import React from 'react';
 import { timeAgo } from '../../Utils/timeStamp';
 
 type TimeAgoProps = {
-  messageTime: string;
+  created_at: string;
   className: string;
 }
 
-export function TimeAgo({ messageTime, className }:TimeAgoProps) {
+export function TimeAgo({ created_at, className }:TimeAgoProps) {
 
 
-  const date = timeAgo(messageTime);
+  const date = timeAgo(created_at);
 
   return (
     <div className={ className }>

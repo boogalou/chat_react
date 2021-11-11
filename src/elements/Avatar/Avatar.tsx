@@ -4,12 +4,12 @@ import cn from 'classnames';
 
 
 type AvatarProps = {
-  userPic: string;
+  avatar: string | undefined;
   className?: string;
   children?: ReactNode;
 }
 
-export function Avatar({userPic, className, children}: AvatarProps) {
+export function Avatar({avatar, className, children}: AvatarProps) {
 
   const classes = cn(styles.avatar, className)
 
@@ -19,7 +19,7 @@ export function Avatar({userPic, className, children}: AvatarProps) {
 
         <img
           className={ styles['image-rounded'] }
-          src={ userPic } alt="avatar"
+          src={ avatar } alt="avatar"
         />
         {children}
       </div>

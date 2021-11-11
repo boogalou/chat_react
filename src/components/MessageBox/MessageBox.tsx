@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent, useState } from 'react';
 
 import styles from './MessageBox.module.css';
 
@@ -6,59 +6,63 @@ import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { BubbleDialog } from '../../elements/BubbleDialog';
 import { CheckMarkMsg } from '../../elements/CheckMarkMsg';
-import { Attach } from '../Main/Main';
+import { Attach, MessageType } from '../Main/Main';
 import { TypingMsg } from '../../elements/TypingMsg';
+import { PlayButton, Waveform } from '../../elements/Voice';
 
 
-type MessageBoxProps = {
-  messageTime: string;
-  msgText: string | null;
-  userPic: string;
-  isMe: boolean;
-  isRead: boolean;
-  attachments?: Attach[];
-  isTyping?: boolean;
-}
+type MessageBoxProps = MessageType & {}
 
 
-export function MessageBox({messageTime, msgText, userPic, isMe, isRead, attachments, isTyping}: MessageBoxProps) {
+export function MessageBox({created_at, text, avatar, isMe, isRead, attachments, isTyping, voice}: MessageBoxProps) {
 
+
+  const [isPlay, setPlay] = useState(true);
+
+  const playButtonHandler = (evt: MouseEvent<HTMLDivElement>): void => {
+    setPlay(!isPlay)
+  }
 
   return (
     <>
       <div className={ isMe ? styles[`message-box--me`] : styles['message-box'] }>
         <div className={ styles['message-box__avatar'] }>
-          <Avatar userPic={ userPic }/>
+          <Avatar avatar={ avatar }/>
         </div>
         <div className={ isMe ? styles['container--me'] : styles.container }>
           {
-            (!isTyping && !msgText) ? (
-              <div>{ attachments?.map(file => (
-                <div className={styles['single-file']}>
-                  <img className={styles['single-file__image']} src={ file.url } alt={ file.filename }/>
-                </div>
-              )) }
-              </div>
-            ) : (
-              <BubbleDialog className={ styles['message-box__bubble'] }>
-                { isTyping
-                  ? <div className={ styles['message-box--typing'] }>
-                    <TypingMsg/>
+            (isTyping || text || voice)
+              ? (
+                <BubbleDialog className={ styles['message-box__bubble'] }>
+                  { isTyping
+                    ? <div className={ styles['message-box--typing'] }>
+                      <TypingMsg/>
+                    </div>
+                    : <p className={ styles['message-box__text'] }>
+                      { text }
+                    </p> }
+                  { attachments && <div className={ styles['message-box__attachments'] }>
+                    { attachments?.map(file => <img className={ styles.attachments__file } src={ file.url }
+                                                    alt={ file.filename }/>) }
+                  </div> }
+                  { voice && <div className={ styles['message-box__voice'] }>
+                    <PlayButton callback={ playButtonHandler } isPlay={isPlay}/>
+                    <Waveform/>
+                  </div> }
+                </BubbleDialog>
+              ) : (
+                <div>{ attachments?.map(file => (
+                  <div className={ styles['single-file'] }>
+                    <img className={ styles['single-file__image'] } src={ file.url } alt={ file.filename }/>
                   </div>
-                  : <p className={ styles['message-box__text'] }>
-                    { msgText }
-                  </p> }
-                { attachments && <div className={ styles['message-box__attachments'] }>
-                  { attachments?.map(file => <img className={ styles.attachments__file } src={ file.url }
-                                                  alt={ file.filename }/>) }
-                </div> }
-              </BubbleDialog>
-            )
+                )) }
+                </div>
+              )
 
           }
           <div style={ {display: 'flex', justifyContent: 'space-between', padding: '0 10px'} }>
             { isMe && <CheckMarkMsg isRead={ isRead }/> }
-            <TimeAgo className={ styles['message-box__time'] } messageTime={ messageTime }/>
+            <TimeAgo className={ styles['message-box__time'] } created_at={ created_at }/>
           </div>
         </div>
       </div>

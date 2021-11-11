@@ -1,7 +1,7 @@
 import React from 'react';
 
 type CheckMarkMessageProps = {
-  isRead: boolean;
+  isRead: boolean | undefined;
   className?: string;
 }
 
