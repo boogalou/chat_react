@@ -8,7 +8,6 @@ import { Button } from '../../elements/Button';
 import { InputField } from '../../elements/Input';
 import { useForm } from '../../hooks/useForm';
 import { UserInit } from './types';
-import { EMAIL } from './Regex';
 
 
 export const SignIn: FC = () => {

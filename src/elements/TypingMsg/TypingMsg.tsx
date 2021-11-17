@@ -4,7 +4,7 @@ import  styles from './TypingMsg.module.css'
 
 type TypingMsgProps = {}
 
-export const TypingMsg: FC<TypingMsgProps> = ({}: TypingMsgProps) => {
+export const TypingMsg: FC<TypingMsgProps> = () => {
   return (
     <div  className={styles.typing}>
       <svg

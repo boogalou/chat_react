@@ -7,10 +7,7 @@ type CheckMarkMessageProps = {
 
 export function CheckMarkMsg({isRead, className}: CheckMarkMessageProps) {
 
-  console.log(isRead);
-
   return (
-
     <div className={ className }>
       { isRead ? (
         <svg version="1.1"
@@ -49,8 +46,6 @@ export function CheckMarkMsg({isRead, className}: CheckMarkMessageProps) {
       )
       }
     </div>
-
-
   );
 }
 

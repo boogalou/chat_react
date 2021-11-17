@@ -1,0 +1,8 @@
+.play {
+    background-color: transparent;
+    border: none;
+    width: 35px;
+    height: auto;
+    z-index: 5;
+
+}

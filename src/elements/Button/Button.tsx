@@ -1,6 +1,6 @@
-import React, { FC, MouseEvent, ReactNode, DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
+import React, { FC, MouseEvent, ReactNode } from 'react';
 
-import styles from './Button.module.css'
+import styles from './Button.module.css';
 import cn from 'classnames';
 
 type ButtonProps = {

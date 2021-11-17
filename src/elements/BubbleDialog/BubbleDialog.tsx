@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
-import styles from './BubbleDialog.module.css'
+import styles from './BubbleDialog.module.css';
 import cn from 'classnames';
 
 type BubbleDialogProps = {

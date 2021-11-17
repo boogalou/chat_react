@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import styles from './Avatar.module.css';
-import cn from 'classnames';
 
 
 type AvatarProps = {
@@ -9,9 +8,8 @@ type AvatarProps = {
   children?: ReactNode;
 }
 
-export function Avatar({avatar, className, children}: AvatarProps) {
+export function Avatar({avatar, children}: AvatarProps) {
 
-  const classes = cn(styles.avatar, className)
 
   return (
     <>
@@ -21,7 +19,7 @@ export function Avatar({avatar, className, children}: AvatarProps) {
           className={ styles['image-rounded'] }
           src={ avatar } alt="avatar"
         />
-        {children}
+        { children }
       </div>
     </>
 

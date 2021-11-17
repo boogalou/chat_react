@@ -1,6 +1,6 @@
 :root {
     /*light colors*/
-    --color-light-blue: #f1f6fb;
+    --color-light-blue: rgba(241, 246, 251, 0.45);
     --color-white: #FFF;
     --color-deep-blue: #3B8DF5;
 
@@ -18,7 +18,7 @@
 body {
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 

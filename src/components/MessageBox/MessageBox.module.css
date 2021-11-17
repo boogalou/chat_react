@@ -78,8 +78,16 @@
 .message-box__voice {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 300px;
+}
+
+.voice__progress {
+    position: absolute;
+    display: block;
+    height: 100%;
+    background-color: var(--color-light-blue);
+    transition: width 0.2s ease-in-out;
 }
 
 

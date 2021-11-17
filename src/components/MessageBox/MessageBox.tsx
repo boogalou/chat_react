@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react';
+import React from 'react';
 
 import styles from './MessageBox.module.css';
 
@@ -6,9 +6,9 @@ import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { BubbleDialog } from '../../elements/BubbleDialog';
 import { CheckMarkMsg } from '../../elements/CheckMarkMsg';
-import { Attach, MessageType } from '../Main/Main';
+import { MessageType } from '../Main/Main';
 import { TypingMsg } from '../../elements/TypingMsg';
-import { PlayButton, Waveform } from '../../elements/Voice';
+import { VoiceMessage } from '../../elements/VoiceMsg';
 
 
 type MessageBoxProps = MessageType & {}
@@ -16,12 +16,6 @@ type MessageBoxProps = MessageType & {}
 
 export function MessageBox({created_at, text, avatar, isMe, isRead, attachments, isTyping, voice}: MessageBoxProps) {
 
-
-  const [isPlay, setPlay] = useState(true);
-
-  const playButtonHandler = (evt: MouseEvent<HTMLDivElement>): void => {
-    setPlay(!isPlay)
-  }
 
   return (
     <>
@@ -45,10 +39,7 @@ export function MessageBox({created_at, text, avatar, isMe, isRead, attachments,
                     { attachments?.map(file => <img className={ styles.attachments__file } src={ file.url }
                                                     alt={ file.filename }/>) }
                   </div> }
-                  { voice && <div className={ styles['message-box__voice'] }>
-                    <PlayButton callback={ playButtonHandler } isPlay={isPlay}/>
-                    <Waveform/>
-                  </div> }
+                  { voice && <VoiceMessage voice={ voice }/> }
                 </BubbleDialog>
               ) : (
                 <div>{ attachments?.map(file => (

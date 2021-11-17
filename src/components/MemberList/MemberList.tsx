@@ -19,8 +19,6 @@ type MessageType = {
 }
 
 
-type MemberListType = {}
-
 const membersList: MessageType[] = [
   {
     _id: Math.random(),
@@ -48,7 +46,7 @@ const membersList: MessageType[] = [
 ];
 
 
-export function MemberList({}) {
+export function MemberList() {
 
   return (
     <>
