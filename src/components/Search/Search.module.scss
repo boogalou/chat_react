@@ -1,0 +1,17 @@
+.search {
+    grid-area: search;
+    width: 100%;
+    padding: 10px;
+    background-color: #f1f6fb;
+
+    &__header {
+
+    }
+
+    &__input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 6px;
+    }
+}
+

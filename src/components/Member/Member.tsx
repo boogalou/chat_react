@@ -7,6 +7,7 @@ import { OnlineStatus } from '../../elements/OlineStatus';
 import { UserType } from '../MemberList/MemberList';
 
 
+
 type MemberProps = {
   text: string;
   created_at: string;
@@ -16,14 +17,13 @@ type MemberProps = {
 
 export function Member({text, created_at, user}: MemberProps) {
 
+
   return (
     <>
       <div className={ styles['contact-item'] }>
 
         <Avatar
-          className={ styles.avatar }
-          avatar={ user.avatar}
-        >
+          className={ styles.avatar } avatar = {user.avatar} fullName={user.fullName} >
           <OnlineStatus className={ styles['online-status']} isOnline={user.isOnline}/>
         </Avatar>
         <div className={ styles['contact-item__name'] }>

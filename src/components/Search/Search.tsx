@@ -1,19 +1,20 @@
 import React from 'react';
 
-import styles from './Search.module.css'
+import styles from './Search.module.scss'
 import { InputField } from '../../elements/Input';
 
 export function Search() {
   return (
     <>
       <div className={styles.search}>
-        <h2 className={ styles['search-title'] }>Memberes</h2>
-        <form className={ styles['search-block'] } action="">
+        <div className={styles.search__header}>{}</div>
+
+        <div className={ styles['search-block'] } >
           <InputField
             type="text"
             placeholder="search"
             className={ styles['search-input'] } />
-        </form>
+        </div>
       </div>
     </>
   );
