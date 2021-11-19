@@ -1,18 +1,1 @@
-.form__group {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 32px;
-}
 
-.form__input {
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #5F939A;
-}
-
-.form__input:focus {
-    border-bottom: 1px solid var(--color-deep-blue);
-    transition: 0.5s;
-}

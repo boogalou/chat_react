@@ -7,13 +7,14 @@ type AvatarProps = {
   avatar: string | null | undefined;
   className?: string;
   fullName?: string | undefined;
+  id?: string | undefined;
   children?: ReactNode;
 }
 
-export function Avatar({avatar, children, fullName}: AvatarProps) {
+export function Avatar({avatar, children, fullName, id}: AvatarProps) {
 
   const firstLetter = fullName?.split('')[0];
-  console.log(firstLetter);
+  console.log('colgen>>', stringToColour(id), stringToColour(id).split('').reverse().join(''));
 
   return (
     <>
@@ -26,8 +27,8 @@ export function Avatar({avatar, children, fullName}: AvatarProps) {
                  xmlnsXlink="http://www.w3.org/1999/xlink">
             <defs>
               <linearGradient id="defaultAvatar" gradientTransform="rotate(75)">
-                <stop offset="45%" stopColor={ `${ stringToColour(fullName) }` }/>
-                <stop offset="90%" stopColor={ `${ stringToColour(fullName).split('').reverse().join('') }` }/>
+                <stop offset="45%" stopColor={ `#${ stringToColour(id) }` }/>
+                <stop offset="90%" stopColor={ `#${ stringToColour(id).split('').reverse().join('') }` }/>
               </linearGradient>
             </defs>
             <circle cx="5" cy="5" r="6" fill="url('#defaultAvatar')"/>

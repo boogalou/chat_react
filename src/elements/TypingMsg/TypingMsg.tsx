@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
 
-import  styles from './TypingMsg.module.css'
+import  styles from './TypingMsg.module.scss'
 
 type TypingMsgProps = {}
 
 export const TypingMsg: FC<TypingMsgProps> = () => {
+
   return (
     <div  className={styles.typing}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        // xmlns:xlink="http://www.w3.org/1999/xlink"
-        // style='margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;'
-        width="100%"
-        height="100%"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        width="10%"
+        height="auto"
         viewBox="0 0 100 100"
         preserveAspectRatio="xMidYMid">
         <circle cx="84" cy="50" r="10" fill="#185ADB">

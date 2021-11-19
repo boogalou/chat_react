@@ -1,5 +1,4 @@
 import React, { ChangeEvent, FC, InputHTMLAttributes, ReactElement, ReactNode } from 'react';
-import styles from './InputField.module.css';
 import cn from 'classnames';
 
 
@@ -28,31 +27,29 @@ export const InputField: FC<InputProps> = ({
   const classes = cn(className);
   return (
     <>
-      <div className={ styles['form__group'] }>
-        { label && <label htmlFor={ id }/>}
-
-        { type === 'textarea' ? (
-          <input
-            id={ id }
-            type={ type }
-            placeholder={ placeholder }
-            value={ value }
-            onChange={ callback }
-            className={ classes }
-            { ...attr }
-          />
-        ) : (
-          <input
+      { label && <label htmlFor={ id }/> }
+      { type === 'textarea' ? (
+        <input
+          className={ classes }
           id={ id }
           type={ type }
           placeholder={ placeholder }
           value={ value }
           onChange={ callback }
+          { ...attr }
+        />
+      ) : (
+        <input
           className={ classes }
-        { ...attr }
-          />
-          ) }
-      </div>
+          id={ id }
+          type={ type }
+          placeholder={ placeholder }
+          value={ value }
+          onChange={ callback }
+          { ...attr }
+        />
+      ) }
+
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './OnlineStatus.module.css';
+import styles from './OnlineStatus.module.scss';
 import cn from 'classnames';
 
 type OnlineStatusProps = {

@@ -15,7 +15,7 @@ type MemberProps = {
 }
 
 
-export function Member({text, created_at, user}: MemberProps) {
+export function Member({text, created_at, user,}: MemberProps) {
 
 
   return (
@@ -23,7 +23,7 @@ export function Member({text, created_at, user}: MemberProps) {
       <div className={ styles['contact-item'] }>
 
         <Avatar
-          className={ styles.avatar } avatar = {user.avatar} fullName={user.fullName} >
+          className={ styles.avatar } avatar = {user.avatar} id={user._id} fullName={user.fullName} >
           <OnlineStatus className={ styles['online-status']} isOnline={user.isOnline}/>
         </Avatar>
         <div className={ styles['contact-item__name'] }>

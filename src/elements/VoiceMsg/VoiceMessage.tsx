@@ -1,5 +1,5 @@
 import React, { FC, MouseEvent, useEffect, useRef, useState } from 'react';
-import styles from '../../components/MessageBox/MessageBox.module.css';
+import styles from './VoiceMsg.module.scss';
 import { PlayButton } from './PlayButton';
 import { Waveform } from './Waveform';
 import { audioTimeRange } from '../../Utils';

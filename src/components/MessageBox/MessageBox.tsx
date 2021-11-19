@@ -24,17 +24,11 @@ export function MessageBox({created_at, text, avatar, isMe, isRead, attachments,
           <Avatar avatar={ avatar }/>
         </div>
         <div className={ isMe ? styles['container--me'] : styles.container }>
-          {
-            (isTyping || text || voice)
+          { isTyping ? <TypingMsg/> :
+            (text || voice)
               ? (
                 <BubbleDialog className={ styles['message-box__bubble'] }>
-                  { isTyping
-                    ? <div className={ styles['message-box--typing'] }>
-                      <TypingMsg/>
-                    </div>
-                    : <p className={ styles['message-box__text'] }>
-                      { text }
-                    </p> }
+                  <p className={ styles['message-box__text'] }>{ text }</p>
                   { attachments && <div className={ styles['message-box__attachments'] }>
                     { attachments?.map(file => <img className={ styles.attachments__file } src={ file.url }
                                                     alt={ file.filename }/>) }

@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-import styles from './Waveform.module.css'
-import { audioTimeRange } from '../../Utils';
+import styles from './VoiceMsg.module.scss';
 
 type WaveformProps = {
   className: string;
@@ -14,7 +13,7 @@ export const Waveform: FC<WaveformProps> = ({ currentTime, className, progress }
   return (
     <>
 <div className={ styles['wave-form']}>
-  <div className={className} style={{width: `${progress}%`}}></div>
+  <div className={className} style={{width: `${progress}%`}}>{}</div>
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
        width="100%"
        height="35px"
