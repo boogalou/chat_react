@@ -22,7 +22,7 @@ type MessageType = {
 const membersList: MessageType[] = [
   {
     _id: String(Math.random()),
-    text: 'Hello Everyone!',
+    text: 'Hello Everyone!😐',
     created_at: '2021-11-06T13:33:00.058Z',
     user: {
       _id: String(Math.random()),
@@ -45,13 +45,13 @@ const membersList: MessageType[] = [
   {
 
     _id: String(Math.random()),
-    text: '«Все Советы рабочих и солдатских депутатов учреждают рабочую милицию. Рабочая милиция находится всецело и исключительно в ведении Совета рабочих и солдатских депутатов.',
+    text: 'Повседневная практика показывает,😐a что укрепление и развитие структуры способствует подготовки и реализации',
     created_at: '2021-11-10T19:59:00.058Z',
     user: {
       _id: String(Math.random()),
       isOnline: false,
-      fullName: 'Bill M.Chen',
-      avatar: null,
+      fullName: 'Clint Eastwood ',
+      avatar: `https://www.giantfreakinrobot.com/wp-content/uploads/2021/10/clint-eastwood-smoking-cowboy-900x506.jpg`,
     }
   },
 

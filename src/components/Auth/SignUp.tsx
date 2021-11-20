@@ -118,7 +118,7 @@ export const SignUp: FC = () => {
         <div className={ cn(styles['btn-group'], styles['form__btn-group']) }>
           <Button
             type="submit"
-            classMix={ styles['btn-group__btn'] }
+            classes={ styles['btn-group__btn'] }
           >Зарегистрироваться
           </Button>
 

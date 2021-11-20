@@ -14,7 +14,6 @@ type AvatarProps = {
 export function Avatar({avatar, children, fullName, id}: AvatarProps) {
 
   const firstLetter = fullName?.split('')[0];
-  console.log('colgen>>', stringToColour(id), stringToColour(id).split('').reverse().join(''));
 
   return (
     <>

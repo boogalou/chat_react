@@ -66,7 +66,7 @@ export const SignIn: FC = () => {
         <div className={ cn(styles['btn-group'], styles['form__btn-group']) }>
           <Button
             type="submit"
-            classMix={ styles['btn-group__btn'] }
+            classes={ styles['btn-group__btn'] }
             disabled={ false }
           >
             Войти

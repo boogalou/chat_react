@@ -1,1 +1,1 @@
-export {SearchTitle} from './SearchTitle'
+export {SearchHeader} from './SearchHeader'

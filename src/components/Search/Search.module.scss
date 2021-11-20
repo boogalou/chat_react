@@ -27,7 +27,7 @@
       height: 50px;
       padding-right: 10px;
       text-indent: 10px;
-      border-radius: 6px;
+      border-radius: var(--b-radus);
       border: none;
 
       &:focus {

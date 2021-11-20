@@ -1,0 +1,22 @@
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 3px;
+  margin-bottom: 10px;
+
+  .dialog-icon {
+    fill: #757575;
+    width: 20px;
+
+    h2 {
+      color:#757575;
+    }
+  }
+
+  .edit-icon {
+    width: 20px;
+    fill: #757575;
+  }
+
+}

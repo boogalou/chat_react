@@ -2,14 +2,14 @@ import React from 'react';
 
 import styles from './Search.module.scss';
 import { InputField } from '../../elements/Input';
-import { SearchTitle } from '../SearchTitle';
+import { SearchHeader } from '../SearchTitle';
 
 
 export function Search() {
   return (
     <>
       <div className={ styles.search }>
-        <SearchTitle/>
+        <SearchHeader/>
         <div className={ styles.search__block }>
           <InputField
             type="text"

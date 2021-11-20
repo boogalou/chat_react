@@ -23,7 +23,7 @@ export const InputField: FC<InputProps> = ({
                                              ...attr
                                            }: InputProps) => {
 
-
+  console.log(value);
   const classes = cn(className);
   return (
     <>
