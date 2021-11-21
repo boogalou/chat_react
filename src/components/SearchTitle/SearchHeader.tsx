@@ -9,8 +9,9 @@ import { MembersIcon } from '../../elements/SearchIntro/MembersIcon';
 export const SearchHeader = () => {
   return (
     <div className={ styles['search-header'] }>
-      <MembersIcon classes={ styles['dialog-icon'] } title={ 'Список диалогов' }/>
-      <PenEdit classes={ styles['edit-icon'] }/>
+      <MembersIcon classes={ styles['search-header__dialog-icon'] }/>
+      <span className={styles['search-header__title']}>Список диалогов</span>
+      <PenEdit classes={ styles['search-header__edit-icon'] }/>
     </div>
 
   );

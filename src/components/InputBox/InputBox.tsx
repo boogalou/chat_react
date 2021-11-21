@@ -46,7 +46,7 @@ export function InputBox() {
             <Button classes={ cn(styles.btn, styles['btn-send']) }>
               { inputValue
                 ? <SendIcon classes={ styles['btn--img'] }/>
-                : <MicrophoneIcon classes={ styles['btn--img'] }/> }
+                : <MicrophoneIcon classes={ styles['btn--micro'] }/> }
             </Button>
 
           </div>

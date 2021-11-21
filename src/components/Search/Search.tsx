@@ -5,7 +5,10 @@ import { InputField } from '../../elements/Input';
 import { SearchHeader } from '../SearchTitle';
 
 
+
 export function Search() {
+
+
   return (
     <>
       <div className={ styles.search }>

@@ -3,10 +3,9 @@ import cn from 'classnames';
 
 type MembersIconProps = {
   classes?: string
-  title?: string
 }
 
-export const MembersIcon: FC<MembersIconProps> = ({classes, title}: MembersIconProps) => {
+export const MembersIcon: FC<MembersIconProps> = ({classes}: MembersIconProps) => {
 
   return (
     <div className={ cn(classes) }>
@@ -15,6 +14,8 @@ export const MembersIcon: FC<MembersIconProps> = ({classes, title}: MembersIconP
            xmlns="http://www.w3.org/2000/svg"
            xmlnsXlink="http://www.w3.org/1999/xlink"
            x="0px" y="0px"
+           width="100%"
+           height="100%"
            viewBox="0 0 513.321 513.321"
            xmlSpace="preserve">
         <g>
@@ -34,7 +35,6 @@ export const MembersIcon: FC<MembersIconProps> = ({classes, title}: MembersIconP
         </g>
       </svg>
 
-      <h2>{ title }</h2>
     </div>
   );
 };

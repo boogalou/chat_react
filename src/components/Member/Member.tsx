@@ -5,14 +5,13 @@ import styles from './Member.module.scss';
 import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { OnlineStatus } from '../../elements/OlineStatus';
-import { UserType } from '../MemberList/MemberList';
-
+import { IUser } from '../../bus/conversationsList/types';
 
 
 type MemberProps = {
   text: string;
   created_at: string;
-  user: UserType;
+  user: IUser;
 }
 
 

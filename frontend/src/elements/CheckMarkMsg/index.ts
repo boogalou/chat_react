@@ -1,1 +1,0 @@
-export { CheckMarkMsg } from './CheckMarkMsg'

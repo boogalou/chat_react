@@ -15,7 +15,6 @@ export type MessageType = {
   isTyping: boolean;
 }
 
-
 export type Attach = {
   filename: string;
   url: string;
