@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*light colors*/
+    --color-light-blue: rgba(241, 246, 251, 0.45);
+    --color-white: #FFF;
+    --color-deep-blue: #3B8DF5;
+
+    /*  dark theme  */
+
+    --color-main-bg: #293145;
+    --color-items: #293145;
+    --color-top-bar: #293144;
+
+    /*  ---------  */
+
+    --b-radus: 6px;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+

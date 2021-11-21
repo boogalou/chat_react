@@ -1,0 +1,30 @@
+.search-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3px;
+  margin-bottom: 10px;
+
+  &__dialog-icon {
+    display: flex;
+    align-items: center;
+    fill: #757575;
+    cursor: pointer;
+    width: 25px;
+    height: auto;
+  }
+
+  &__title {
+    color: #757575;
+
+  }
+
+  &__edit-icon {
+    width: 20px;
+    fill: #757575;
+    cursor: pointer;
+
+  }
+
+}

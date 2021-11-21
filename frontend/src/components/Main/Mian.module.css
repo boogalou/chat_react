@@ -1,0 +1,25 @@
+.main {
+    grid-area: main;
+    padding: 10px;
+    background-color: #f1f6fb;
+
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+.main::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}
