@@ -6,6 +6,7 @@ import { Button } from '../../elements/Button';
 import { InputField } from '../../elements/Input';
 import cn from 'classnames';
 import { AttachIcon, MicrophoneIcon, SendIcon, SmileIcon } from '../../elements/svg';
+import { Callback, FileUpload, useFileUpload } from 'use-file-upload';
 
 
 export function InputBox() {
@@ -16,6 +17,14 @@ export function InputBox() {
     setInputValue(evt.target.value);
   };
 
+  const [files, selectFiles] = useFileUpload();
+
+  const fileUplosdHandler = () => {
+    selectFiles(
+      {accept: "image/*", multiple: true},
+      (files) => console.log(({ files })))
+  }
+
   return (
     <>
       <div className={ styles['input-box'] }>
@@ -23,7 +32,9 @@ export function InputBox() {
         <div className={ styles['chat-input-container'] }>
           <div className={ styles['chat-input-container__attach-block'] }>
 
-            <Button classes={ cn(styles.btn, styles['btn--attach']) }>
+            <Button
+              callback={fileUplosdHandler}
+              classes={ cn(styles.btn, styles['btn--attach']) }>
               <AttachIcon classes={ styles['btn--img'] }/>
             </Button>
           </div>

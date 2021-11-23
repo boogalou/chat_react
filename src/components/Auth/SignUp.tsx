@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import styles from './Auth.module.css';
+import styles from './Auth.module.scss';
 
 import { Button } from '../../elements/Button';
 import { InputField } from '../../elements/Input';
