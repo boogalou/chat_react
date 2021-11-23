@@ -6,20 +6,20 @@ import { Avatar } from '../../elements/Avatar';
 import { TimeAgo } from '../../elements/TimeAgo';
 import { BubbleDialog } from '../../elements/BubbleDialog';
 import { CheckMarkMsg } from '../../elements/CheckMarkMsg';
-import { MessageType } from '../Main/Main';
 import { TypingMsg } from '../../elements/TypingMsg';
 import { VoiceMessage } from '../../elements/VoiceMsg';
+import { IMessage } from '../../types/apiTypes';
 
 
-type MessageBoxProps = MessageType & {}
+type MessageBoxProps = IMessage & {}
 
 
-export function MessageBox({created_at, text, avatar, isMe, isRead, attachments, isTyping, voice}: MessageBoxProps) {
-
+export function MessageBox({created_at, text, avatar, isMe, isRead, attachments, isTyping, voice, _id}: MessageBoxProps) {
 
   return (
     <>
-      <div className={ isMe ? styles[`message-box--me`] : styles['message-box'] }>
+
+      <div className={ isMe ? styles[`message-box--me`] : styles['message-box'] } >
         <div className={ styles['message-box__avatar'] }>
           <Avatar avatar={ avatar }/>
         </div>
@@ -27,7 +27,7 @@ export function MessageBox({created_at, text, avatar, isMe, isRead, attachments,
           { isTyping ? <TypingMsg/> :
             (text || voice)
               ? (
-                <BubbleDialog className={ styles['message-box__bubble'] }>
+                <BubbleDialog className={ styles['message-box__bubble'] }  >
                   <p className={ styles['message-box__text'] }>{ text }</p>
                   { attachments && <div className={ styles['message-box__attachments'] }>
                     { attachments?.map(file => <img className={ styles.attachments__file } src={ file.url }

@@ -10,6 +10,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   placeholder?: string;
   callback?: (e: ChangeEvent<HTMLInputElement & HTMLSelectElement>) => void;
   children?: ReactNode;
+  classes?: string;
 }
 
 export const InputField: FC<InputProps> = ({
@@ -19,37 +20,24 @@ export const InputField: FC<InputProps> = ({
                                              value,
                                              placeholder,
                                              callback,
-                                             className,
+                                             classes,
                                              ...attr
                                            }: InputProps) => {
 
 
-  const classes = cn(className);
+
   return (
     <>
       { label && <label htmlFor={ id }/> }
-      { type === 'textarea' ? (
-        <input
-          className={ classes }
-          id={ id }
-          type={ type }
-          placeholder={ placeholder }
-          value={ value }
-          onChange={ callback }
-          { ...attr }
-        />
-      ) : (
-        <input
-          className={ classes }
-          id={ id }
-          type={ type }
-          placeholder={ placeholder }
-          value={ value }
-          onChange={ callback }
-          { ...attr }
-        />
-      ) }
-
+      <input
+        className={cn(classes) }
+        id={ id }
+        type={ type }
+        placeholder={ placeholder }
+        value={ value }
+        onChange={ callback }
+        { ...attr }
+      />
     </>
   );
 };

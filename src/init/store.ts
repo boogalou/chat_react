@@ -1,13 +1,15 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { authReducer } from '../bus/auth/reducer';
 import thunk from 'redux-thunk';
-import { conversationsListReducer } from '../bus/conversationsList/reducer';
+import { conversationsListReducer } from '../bus/conversations/reducer';
+import { messagesReducer } from '../bus/messages/reducer';
 
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     conversations: conversationsListReducer,
+    messages: messagesReducer,
   },
   middleware: [thunk],
   devTools: true,

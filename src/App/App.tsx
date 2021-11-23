@@ -5,7 +5,7 @@ import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
 import { Main } from '../components/Main';
 import { Info } from '../components/Info';
-import { MemberList } from '../components/MemberList';
+import { Conversations } from '../components/Conversations';
 import { InputBox } from '../components/InputBox/';
 import { Search } from '../components/Search';
 
@@ -20,7 +20,7 @@ export function App({children}: AppProps): JSX.Element {
       <Main/>
       <InputBox/>
       <Search/>
-      <MemberList/>
+      <Conversations/>
       <Header/>
       <Info/>
     </div>

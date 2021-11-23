@@ -23,3 +23,11 @@
     background-color: #dbdbdb;
     border-radius: 50px;
 }
+
+.preloader {
+    justify-self: center;
+    fill: blue;
+    width: 10%;
+    height: 10%;
+
+}

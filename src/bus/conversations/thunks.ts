@@ -1,4 +1,4 @@
-import { ApiService } from '../../api/urlConfig';
+import { ApiService } from '../../api/ApiService';
 import { startFetching, stopFetching, successFetching } from './actions';
 import { Dispatch } from 'react';
 import { ConversationsActionTypes } from './actionsTypes';
