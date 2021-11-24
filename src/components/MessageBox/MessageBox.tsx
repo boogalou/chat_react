@@ -10,9 +10,7 @@ import { TypingMsg } from '../../elements/TypingMsg';
 import { VoiceMessage } from '../../elements/VoiceMsg';
 import { IMessage } from '../../types/apiTypes';
 
-
 type MessageBoxProps = IMessage & {}
-
 
 export function MessageBox({created_at, text, avatar, isMe, isRead, attachments, isTyping, voice, _id}: MessageBoxProps) {
 

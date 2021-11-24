@@ -14,11 +14,13 @@ type ConversationProps = {
   text: string;
   created_at: string;
   user: IUser;
+  currentConversationId: string | null;
 }
 
 
-export function Conversation({text, created_at, user}: ConversationProps) {
+export function Conversation({text, created_at, user, currentConversationId}: ConversationProps) {
 
+  const [activeConves, setActiveConvers] = useState(false)
 
 
   const dispatch = useAppDispatch();
@@ -29,7 +31,7 @@ export function Conversation({text, created_at, user}: ConversationProps) {
 
   return (
     <>
-      <div className={ styles.contact } onClick={ clickHandler }>
+      <div className={ currentConversationId !== user._id ? styles.contact : styles['contact--active']} onClick={ clickHandler }>
 
         <Avatar
           className={ styles.avatar } avatar={ user.avatar } id={ user._id } fullName={ user.fullName }>

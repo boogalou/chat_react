@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 
 type AttachIconProps = {
   classes: string;
@@ -6,7 +6,10 @@ type AttachIconProps = {
 
 export const AttachIcon: FC<AttachIconProps> = ({ classes }: AttachIconProps) => {
   return (
-    <div className={classes}>
+    <div
+      className={classes}
+
+    >
       <svg
         version="1.1"
         id="Capa_1"

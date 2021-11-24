@@ -11,17 +11,19 @@ export function Conversations() {
   const dispatch = useDispatch();
 
   const conversations = useAppSelector(state => state.conversations.conversations);
+  const currentConversationId = useAppSelector(state => state.conversations.currentConversation);
 
   useEffect(() => {
     if (!conversations.length)
       dispatch(getConversations())
   }, [conversations])
 
+
   return (
     <>
       <div className={ styles.contacts }>
         {
-          conversations && conversations.map(member => <Conversation key={ member.user._id} { ...member }  />)
+          conversations && conversations.map(member => <Conversation key={ member.user._id} { ...member } currentConversationId={currentConversationId}  />)
         }
       </div>
 

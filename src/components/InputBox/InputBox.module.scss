@@ -40,6 +40,7 @@
   }
 
   .btn {
+    position: relative;
     padding: 3px;
     background-color: var(--color-white);
     border-radius: 50%;
@@ -47,10 +48,6 @@
     height: 30px;
     cursor: pointer;
     border: none;
-
-    &:active {
-
-    }
 
     &--micro {
       fill: #757575;
@@ -60,6 +57,11 @@
       }
     }
 
+    &__emoji {
+      &--active {
+        fill: var(--color-deep-blue);
+      }
+    }
 
     &--img {
       width: 20px;
@@ -69,6 +71,20 @@
 
       &:hover {
         fill: var(--color-deep-blue);
+      }
+    }
+
+    &__emoji-picker {
+      position: absolute;
+      top: -450px;
+      left: -255px;
+      display: none;
+
+      &--active {
+        position: absolute;
+        top: -450px;
+        left: -255px;
+        display: block;
       }
     }
   }

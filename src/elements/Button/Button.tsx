@@ -1,10 +1,9 @@
 import React, { FC, MouseEvent, ReactNode } from 'react';
-import { Callback, FileUpload } from 'use-file-upload';
 
 type ButtonProps = {
   children?: ReactNode;
   classes?: string;
-  callback?: (evt: MouseEvent<HTMLButtonElement>) => void | Callback;
+  callback?: (evt: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   type?: 'submit' | 'reset' | 'button' | undefined;
 }

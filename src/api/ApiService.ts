@@ -12,7 +12,7 @@ export class ApiService {
   }
 
   static async getDialogById(dialogID: string | null): Promise<AxiosResponse<IMessage[]>> {
-    const response = await axios.get(`http://localhost:9595/conversations?_id=${dialogID}`);
+    const response = await axios.get(`http://localhost:9595/messages?dialog=${dialogID}`);
     console.log(response);
 
     return response;

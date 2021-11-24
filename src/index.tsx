@@ -5,6 +5,7 @@ import { store } from './init/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Routes } from './Routes';
+import 'emoji-mart/css/emoji-mart.css'
 
 ReactDOM.render(
   <React.StrictMode>
